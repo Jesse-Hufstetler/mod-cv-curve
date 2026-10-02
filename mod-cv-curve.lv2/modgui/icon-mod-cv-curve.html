@@ -1,0 +1,28 @@
+<div class="mod-pedal mod-cv-curve{{{cns}}}">
+    <div mod-role="drag-handle" class="drag-handle"></div>
+
+    <div class="title">CV CURVE</div>
+
+    <div class="plot-box">
+        <svg class="plot" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="grid" d="M25 0V100M50 0V100M75 0V100M0 25H100M0 50H100M0 75H100"/>
+            <path class="linear" d="M0 100L100 0"/>
+            <path class="curve-path" d="M0 100L100 0"/>
+        </svg>
+    </div>
+
+    <div class="in-label">CV IN</div>
+    <div class="out-label">CV OUT</div>
+
+    <div class="knob-base"></div>
+    <div class="knob" mod-role="input-control-port" mod-widget="film" mod-widget-rotation="270" mod-port-symbol="Curve" title="Curve"></div>
+    <div class="knob-label">CURVE</div>
+    <div class="knob-value" mod-role="input-control-value" mod-port-symbol="Curve"></div>
+
+    <div class="mod-pedal-input">
+        <div class="mod-input" mod-role="input-cv-port" mod-port-symbol="CvInput" title="CV Input"></div>
+    </div>
+    <div class="mod-pedal-output">
+        <div class="mod-output" mod-role="output-cv-port" mod-port-symbol="CvOutput" title="CV Output"></div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://jesse-hufstetler.github.io/plugins/mod-devel/eg-mod-cv-curve>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-mod-cv-curve.html> ;
+        modgui:stylesheet <modgui/stylesheet-mod-cv-curve.css> ;
+        modgui:javascript <modgui/script-mod-cv-curve.js> ;
+        modgui:screenshot <modgui/screenshot-mod-cv-curve.png> ;
+        modgui:thumbnail <modgui/thumbnail-mod-cv-curve.png> ;
+        modgui:brand "Jesse" ;
+        modgui:label "CV Curve" ;
+        modgui:model "mod-cv-curve" ;
+        modgui:port [
+            lv2:index 2 ;
+            lv2:symbol "Curve" ;
+            lv2:name "Curve" ;
+        ] ;
+    ] .

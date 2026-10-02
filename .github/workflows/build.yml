@@ -1,0 +1,21 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LV2 headers
+        run: sudo apt-get update && sudo apt-get install -y lv2-dev
+      - name: Build
+        run: make
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: mod-cv-curve.lv2
+          path: mod-cv-curve.lv2/

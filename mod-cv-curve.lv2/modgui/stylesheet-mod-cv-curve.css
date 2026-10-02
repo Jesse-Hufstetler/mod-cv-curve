@@ -1,0 +1,168 @@
+.mod-pedal.mod-cv-curve{{{cns}}} {
+    position: relative;
+    width: 200px;
+    height: 276px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #3d3d3d 0%, #282828 100%);
+    box-shadow: inset 0 0 0 2px #151515, inset 0 2px 0 3px rgba(255, 255, 255, 0.07);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #dddddd;
+}
+
+/* The whole face drags the pedal; the controls sit above it (z-index 40) so they still work. */
+.mod-pedal.mod-cv-curve{{{cns}}} .drag-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    cursor: move;
+}
+
+.mod-pedal.mod-cv-curve{{{cns}}} .title {
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ff4d4d;
+}
+
+/* Graph of the curve: input along the bottom, output up the side, both 0-10 V. Drawn by script-mod-cv-curve.js. */
+.mod-pedal.mod-cv-curve{{{cns}}} .plot-box {
+    position: absolute;
+    left: 44px;
+    top: 40px;
+    width: 112px;
+    height: 112px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 2px solid #151515;
+    background: #171717;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot path {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .grid {
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 1;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .linear {
+    stroke: rgba(255, 255, 255, 0.28);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .curve-path {
+    stroke: #ff4d4d;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 3px rgba(255, 77, 77, 0.65));
+}
+
+.mod-pedal.mod-cv-curve{{{cns}}} .in-label,
+.mod-pedal.mod-cv-curve{{{cns}}} .out-label {
+    position: absolute;
+    top: 90px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #9c9c9c;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .in-label { left: 14px; }
+.mod-pedal.mod-cv-curve{{{cns}}} .out-label { right: 8px; }
+
+/* Curve knob. MOD rotates the .knob element itself (mod-widget-rotation), so it only holds the indicator;
+   the lit base underneath stays still. */
+.mod-pedal.mod-cv-curve{{{cns}}} .knob-base {
+    position: absolute;
+    left: 68px;
+    top: 168px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #626262 0%, #1e1e1e 100%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.55);
+    z-index: 38;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .knob-base::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 9px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #3e3e3e 0%, #242424 100%);
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .knob {
+    position: absolute;
+    left: 68px;
+    top: 168px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    z-index: 40;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .knob::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 13px;
+    width: 5px;
+    height: 11px;
+    margin-left: -2.5px;
+    border-radius: 3px;
+    background: #ff4d4d;
+}
+
+.mod-pedal.mod-cv-curve{{{cns}}} .knob-label {
+    position: absolute;
+    left: 0;
+    top: 238px;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #9c9c9c;
+}
+
+.mod-pedal.mod-cv-curve{{{cns}}} .knob-value {
+    position: absolute;
+    left: 60px;
+    top: 252px;
+    width: 80px;
+    text-align: center;
+    font-size: 11px;
+    color: #ff4d4d;
+    z-index: 40;
+}
+
+/* MOD paints its own connector artwork on the port elements; these only place their containers on the pedal edges. */
+.mod-pedal.mod-cv-curve{{{cns}}} .mod-pedal-input {
+    position: absolute;
+    right: 100%;
+    top: 68px;
+    z-index: 40;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .mod-pedal-output {
+    position: absolute;
+    left: 100%;
+    top: 68px;
+    z-index: 40;
+}

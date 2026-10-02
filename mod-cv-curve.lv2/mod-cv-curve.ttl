@@ -1,0 +1,55 @@
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix lv2:   <http://lv2plug.in/ns/lv2core#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix units: <http://lv2plug.in/ns/extensions/units#> .
+@prefix mod:   <http://moddevices.com/ns/mod#> .
+
+<https://jesse-hufstetler.github.io/plugins/mod-devel/eg-mod-cv-curve>
+    a lv2:Plugin, mod:ControlVoltagePlugin ;
+    lv2:project <http://lv2plug.in/ns/lv2> ;
+    doap:name "CV Curve" ;
+    doap:license <https://opensource.org/licenses/MIT> ;
+    doap:developer [
+        foaf:name "Jesse Hufstetler" ;
+        foaf:homepage <https://github.com/Jesse-Hufstetler> ;
+    ] ;
+    doap:maintainer [
+        foaf:name "Jesse Hufstetler" ;
+        foaf:homepage <https://github.com/Jesse-Hufstetler/mod-cv-curve> ;
+    ] ;
+    lv2:minorVersion 1 ;
+    lv2:microVersion 0 ;
+    rdfs:comment """
+Bends a 0-10 V control voltage along an adjustable curve.
+
+With CURVE at 0 the output follows the input exactly. Turn it one way for a
+curve that starts slowly and finishes fast, the other way for one that starts
+fast and eases off. Use it to give a footswitch ramp, an LFO or an envelope a
+more natural response before it drives a parameter.
+""" ;
+    lv2:optionalFeature lv2:hardRTCapable ;
+    lv2:port
+    [
+        a lv2:InputPort, lv2:CVPort, mod:CVPort;
+        lv2:index 0;
+        lv2:symbol "CvInput";
+        lv2:name "CV Input";
+    ],
+    [
+        a lv2:OutputPort, lv2:CVPort, mod:CVPort;
+        lv2:index 1;
+        lv2:symbol "CvOutput";
+        lv2:name "CV Output";
+    ],
+    [
+        a lv2:InputPort ,
+        lv2:ControlPort ;
+        lv2:index 2;
+        lv2:symbol "Curve" ;
+        lv2:name "Curve";
+        lv2:default 0.0 ;
+        lv2:minimum -4.0 ;
+        lv2:maximum 4.0 ;
+    ] .
