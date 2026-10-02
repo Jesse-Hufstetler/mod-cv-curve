@@ -3,16 +3,30 @@
 
     <div class="title">CV CURVE</div>
 
-    <div class="plot-box">
-        <svg class="plot" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path class="grid" d="M25 0V100M50 0V100M75 0V100M0 25H100M0 50H100M0 75H100"/>
-            <path class="linear" d="M0 100L100 0"/>
-            <path class="curve-path" d="M0 100L100 0"/>
-        </svg>
-    </div>
+    <!-- Graph, drawn 1:1 in pixels. The plot area is 120x120 with its origin (0 V, 0 V) at x=30, y=126.
+         script-mod-cv-curve.js moves the dots and lines and redraws the curve. -->
+    <svg class="plot" xmlns="http://www.w3.org/2000/svg" width="168" height="146" viewBox="0 0 168 146">
+        <rect class="plot-bg" x="30" y="6" width="120" height="120" rx="3"/>
+        <path class="grid" d="M60 6V126M90 6V126M120 6V126M30 36H150M30 66H150M30 96H150"/>
+        <path class="linear" d="M30 126L150 6"/>
+        <path class="curve-path" d="M30 126L150 6"/>
+        <path class="in-line" d="M30 126V126"/>
+        <path class="out-line" d="M30 126H30"/>
+        <path class="axis" d="M30 6V126H150"/>
+        <path class="ticks" d="M26 126H30M27 96H30M26 66H30M27 36H30M26 6H30M30 126V130M60 126V129M90 126V130M120 126V129M150 126V130"/>
+        <text class="tick" x="23" y="129" text-anchor="end">0</text>
+        <text class="tick" x="23" y="69" text-anchor="end">5</text>
+        <text class="tick" x="23" y="9" text-anchor="end">10</text>
+        <text class="tick" x="30" y="141" text-anchor="middle">0</text>
+        <text class="tick" x="90" y="141" text-anchor="middle">5</text>
+        <text class="tick" x="150" y="141" text-anchor="middle">10</text>
+        <circle class="pt-dot" cx="30" cy="126" r="3"/>
+        <circle class="in-dot" cx="30" cy="126" r="3.5"/>
+        <circle class="out-dot" cx="30" cy="126" r="3.5"/>
+    </svg>
 
-    <div class="in-label">CV IN</div>
-    <div class="out-label">CV OUT</div>
+    <div class="readout in-readout"><span class="r-lbl">IN</span> <span class="in-val">0.00 V</span></div>
+    <div class="readout out-readout"><span class="r-lbl">OUT</span> <span class="out-val">0.00 V</span></div>
 
     <div class="knob-base"></div>
     <div class="knob" mod-role="input-control-port" mod-widget="film" mod-widget-rotation="270" mod-port-symbol="Curve" title="Curve"></div>

@@ -52,4 +52,26 @@ more natural response before it drives a parameter.
         lv2:default 0.0 ;
         lv2:minimum -4.0 ;
         lv2:maximum 4.0 ;
+    ],
+    [
+        a lv2:OutputPort ,
+        lv2:ControlPort ;
+        lv2:index 3;
+        lv2:symbol "InputValue" ;
+        lv2:name "Input Value";
+        lv2:default 0.0 ;
+        lv2:minimum 0.0 ;
+        lv2:maximum 10.0 ;
+        units:unit mod:volts ;
+    ],
+    [
+        a lv2:OutputPort ,
+        lv2:ControlPort ;
+        lv2:index 4;
+        lv2:symbol "OutputValue" ;
+        lv2:name "Output Value";
+        lv2:default 0.0 ;
+        lv2:minimum 0.0 ;
+        lv2:maximum 10.0 ;
+        units:unit mod:volts ;
     ] .

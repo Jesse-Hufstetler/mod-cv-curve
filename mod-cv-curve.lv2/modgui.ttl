@@ -17,4 +17,6 @@
             lv2:symbol "Curve" ;
             lv2:name "Curve" ;
         ] ;
+
+        modgui:monitoredOutputs [ lv2:symbol "InputValue" ] , [ lv2:symbol "OutputValue" ] ;
     ] .
