@@ -14,3 +14,5 @@ install: build
 	install -d $(DESTDIR)$(PREFIX)/lib/lv2/mod-cv-curve.lv2
 	install -m 644 mod-cv-curve.lv2/*.so  $(DESTDIR)$(PREFIX)/lib/lv2/mod-cv-curve.lv2/
 	install -m 644 mod-cv-curve.lv2/*.ttl $(DESTDIR)$(PREFIX)/lib/lv2/mod-cv-curve.lv2/
+	install -d $(DESTDIR)$(PREFIX)/lib/lv2/mod-cv-curve.lv2/modgui
+	install -m 644 mod-cv-curve.lv2/modgui/* $(DESTDIR)$(PREFIX)/lib/lv2/mod-cv-curve.lv2/modgui/
