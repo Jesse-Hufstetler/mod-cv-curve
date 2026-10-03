@@ -6,7 +6,7 @@
 @prefix units: <http://lv2plug.in/ns/extensions/units#> .
 @prefix mod:   <http://moddevices.com/ns/mod#> .
 
-<https://jesse-hufstetler.github.io/plugins/mod-devel/eg-mod-cv-curve>
+<https://jesse-hufstetler.github.io/plugins/cv-curve>
     a lv2:Plugin, mod:ControlVoltagePlugin ;
     lv2:project <http://lv2plug.in/ns/lv2> ;
     doap:name "CV Curve" ;

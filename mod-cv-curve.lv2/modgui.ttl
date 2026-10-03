@@ -1,7 +1,7 @@
 @prefix modgui: <http://moddevices.com/ns/modgui#> .
 @prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
 
-<https://jesse-hufstetler.github.io/plugins/mod-devel/eg-mod-cv-curve>
+<https://jesse-hufstetler.github.io/plugins/cv-curve>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
         modgui:iconTemplate <modgui/icon-mod-cv-curve.html> ;

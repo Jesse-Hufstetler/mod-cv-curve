@@ -52,7 +52,7 @@ sudo make install   # installs to /usr/local/lib/lv2
 
 ## Plugin URI
 
-The plugin's permanent ID is `https://jesse-hufstetler.github.io/plugins/mod-devel/eg-mod-cv-curve`. Pedalboards remember plugins by URI, so changing it makes existing pedalboards show the plugin as missing until it is re-added. If you do need to change it, `tools/rename-uri.sh <new-uri>` updates every file; rebuild afterwards.
+The plugin's permanent ID is `https://jesse-hufstetler.github.io/plugins/cv-curve`. Pedalboards remember plugins by URI, so changing it makes existing pedalboards show the plugin as missing until it is re-added. If you do need to change it, `tools/rename-uri.sh <new-uri>` updates every file; rebuild afterwards.
 
 ## License
 
