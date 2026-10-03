@@ -3,30 +3,40 @@
 
     <div class="title">CV CURVE</div>
 
-    <!-- Graph, drawn 1:1 in pixels. The plot area is 120x120 with its origin (0 V, 0 V) at x=30, y=126.
-         script-mod-cv-curve.js moves the dots and lines and redraws the curve. -->
-    <svg class="plot" xmlns="http://www.w3.org/2000/svg" width="168" height="146" viewBox="0 0 168 146">
-        <rect class="plot-bg" x="30" y="6" width="120" height="120" rx="3"/>
-        <path class="grid" d="M60 6V126M90 6V126M120 6V126M30 36H150M30 66H150M30 96H150"/>
-        <path class="linear" d="M30 126L150 6"/>
-        <path class="curve-path" d="M30 126L150 6"/>
-        <path class="in-line" d="M30 126V126"/>
-        <path class="out-line" d="M30 126H30"/>
-        <path class="axis" d="M30 6V126H150"/>
-        <path class="ticks" d="M26 126H30M27 96H30M26 66H30M27 36H30M26 6H30M30 126V130M60 126V129M90 126V130M120 126V129M150 126V130"/>
-        <text class="tick" x="23" y="129" text-anchor="end">0</text>
-        <text class="tick" x="23" y="69" text-anchor="end">5</text>
-        <text class="tick" x="23" y="9" text-anchor="end">10</text>
-        <text class="tick" x="30" y="141" text-anchor="middle">0</text>
-        <text class="tick" x="90" y="141" text-anchor="middle">5</text>
-        <text class="tick" x="150" y="141" text-anchor="middle">10</text>
-        <circle class="pt-dot" cx="30" cy="126" r="3"/>
-        <circle class="in-dot" cx="30" cy="126" r="3.5"/>
-        <circle class="out-dot" cx="30" cy="126" r="3.5"/>
-    </svg>
+    <!-- The graph and its labels, drawn 1:1 in pixels over the pedal face. The plot area is 120x120 with its origin
+         (0 V, 0 V) at x=20, y=156. The input ruler runs along the bottom with the IN readout as its label; the
+         output ruler runs up the right side with the OUT readout as its label. The thin lines with arrowheads show
+         the signal flowing in from the left jack, through the graph, and out to the right jack.
+         script-mod-cv-curve.js redraws the curve and moves the dots and guide lines. -->
+    <svg class="plot" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+        <rect class="plot-bg" x="20" y="36" width="120" height="120" rx="3"/>
+        <path class="grid" d="M50 36V156M80 36V156M110 36V156M20 66H140M20 96H140M20 126H140"/>
+        <path class="linear" d="M20 156L140 36"/>
+        <path class="curve-path" d="M20 156L140 36"/>
+        <path class="in-line" d="M20 156V156"/>
+        <path class="out-line" d="M20 156H20"/>
+        <path class="axis" d="M20 156H140V36"/>
+        <path class="ticks" d="M20 156V160M50 156V159M80 156V160M110 156V159M140 156V160M140 156H144M140 126H143M140 96H144M140 66H143M140 36H144"/>
+        <text class="tick" x="20" y="169" text-anchor="middle">0</text>
+        <text class="tick" x="140" y="169" text-anchor="middle">10</text>
+        <text class="tick" x="147" y="159">0</text>
+        <text class="tick" x="147" y="99">5</text>
+        <text class="tick" x="147" y="39">10</text>
 
-    <div class="readout in-readout"><span class="r-lbl">IN</span> <span class="in-val">0.00 V</span></div>
-    <div class="readout out-readout"><span class="r-lbl">OUT</span> <span class="out-val">0.00 V</span></div>
+        <path class="flow" d="M12 183H46"/>
+        <path class="flow-head" d="M52 183L46 180V186Z"/>
+        <path class="flow" d="M80 176V163"/>
+        <path class="flow-head" d="M80 157L77 163H83Z"/>
+        <path class="flow" d="M181 96H192"/>
+        <path class="flow-head" d="M198 96L192 93V99Z"/>
+
+        <text class="in-label" x="80" y="187" text-anchor="middle"><tspan class="r-lbl">IN</tspan> <tspan class="in-val">0.00 V</tspan></text>
+        <text class="out-label" transform="rotate(90 172 96)" x="172" y="96" dy="4" text-anchor="middle"><tspan class="r-lbl">OUT</tspan> <tspan class="out-val">0.00 V</tspan></text>
+
+        <circle class="pt-dot" cx="20" cy="156" r="3"/>
+        <circle class="in-dot" cx="20" cy="156" r="3.5"/>
+        <circle class="out-dot" cx="140" cy="156" r="3.5"/>
+    </svg>
 
     <div class="knob-base"></div>
     <div class="knob" mod-role="input-control-port" mod-widget="film" mod-widget-rotation="270" mod-port-symbol="Curve" title="Curve"></div>

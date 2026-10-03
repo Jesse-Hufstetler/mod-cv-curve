@@ -36,8 +36,8 @@
    so its text stays crisp; script-mod-cv-curve.js moves the dots and lines and redraws the curve. */
 .mod-pedal.mod-cv-curve{{{cns}}} .plot {
     position: absolute;
-    left: 16px;
-    top: 32px;
+    left: 0;
+    top: 0;
     display: block;
     overflow: visible;
 }
@@ -92,26 +92,35 @@
     stroke-width: 1.5;
 }
 
-/* Live numeric readouts under the graph. */
-.mod-pedal.mod-cv-curve{{{cns}}} .readout {
-    position: absolute;
-    top: 182px;
-    font-size: 11px;
+/* The IN readout labels the input ruler along the bottom; the OUT readout labels the output ruler up the right. */
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .in-label,
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .out-label {
+    font-family: Arial, Helvetica, sans-serif;
     font-variant-numeric: tabular-nums;
-    white-space: nowrap;
+    white-space: pre;
 }
-.mod-pedal.mod-cv-curve{{{cns}}} .in-readout { left: 46px; }
-.mod-pedal.mod-cv-curve{{{cns}}} .out-readout { right: 34px; text-align: right; }
-.mod-pedal.mod-cv-curve{{{cns}}} .r-lbl {
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .r-lbl {
+    fill: #9c9c9c;
     font-size: 9px;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #9c9c9c;
 }
-.mod-pedal.mod-cv-curve{{{cns}}} .in-val,
-.mod-pedal.mod-cv-curve{{{cns}}} .out-val {
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .in-val,
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .out-val {
+    fill: #ff4d4d;
+    font-size: 11px;
     font-weight: bold;
-    color: #ff4d4d;
+}
+
+/* Thin lines with arrowheads showing the signal flowing in from the left jack, into the graph, and out to the
+   right jack. */
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .flow {
+    stroke: rgba(156, 156, 156, 0.7);
+    stroke-width: 1;
+}
+.mod-pedal.mod-cv-curve{{{cns}}} .plot .flow-head {
+    fill: rgba(156, 156, 156, 0.9);
+    stroke: none;
 }
 
 /* Curve knob. MOD rotates the .knob element itself (mod-widget-rotation), so it only holds the indicator;
@@ -185,12 +194,12 @@
 .mod-pedal.mod-cv-curve{{{cns}}} .mod-pedal-input {
     position: absolute;
     right: 100%;
-    top: 44px;
+    top: 155px; /* centred on the IN readout, so the flow line runs straight in from the jack */
     z-index: 40;
 }
 .mod-pedal.mod-cv-curve{{{cns}}} .mod-pedal-output {
     position: absolute;
     left: 100%;
-    top: 44px;
+    top: 68px; /* centred on the OUT readout, so the flow line runs straight out to the jack */
     z-index: 40;
 }

@@ -6,7 +6,7 @@
 
 An LV2 plugin for [MOD Devices](https://mod.audio/) hardware (built for the MOD Dwarf) that bends a control voltage (CV) along an adjustable curve.
 
-With **Curve** at 0 the output follows the input exactly. Turn it one way and the output starts slowly and finishes fast; turn it the other way and it starts fast and eases off. Use it to give a footswitch ramp, an LFO or an envelope a more natural response before it drives a parameter. The pedal shows a live graph of the curve and redraws it as you turn the knob. Dots on the graph's voltage rulers follow the incoming and outgoing voltages, joined to the curve by thin guide lines, with the exact values shown underneath.
+With **Curve** at 0 the output follows the input exactly. Turn it one way and the output starts slowly and finishes fast; turn it the other way and it starts fast and eases off. Use it to give a footswitch ramp, an LFO or an envelope a more natural response before it drives a parameter. The pedal shows a live graph of the curve and redraws it as you turn the knob. Dots on the graph's voltage rulers follow the incoming voltage (bottom ruler) and outgoing voltage (right-hand ruler) and glide smoothly between updates, joined to the curve by thin guide lines. The **IN** and **OUT** readouts double as the axis labels, and thin arrows show the signal flowing in from the left jack, through the graph, and out to the right jack.
 
 ## Ports
 
