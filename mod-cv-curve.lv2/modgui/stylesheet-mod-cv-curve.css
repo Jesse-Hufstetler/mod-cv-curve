@@ -9,6 +9,12 @@
     color: #dddddd;
 }
 
+/* MOD puts its "Manage CV Ports" label box inside the pedal and lets it inherit the text colour,
+   but its background is white; the pedal's light text would make the label unreadable. */
+.mod-pedal.mod-cv-curve{{{cns}}} .output-cv-checkbox input {
+    color: #333333;
+}
+
 /* The whole face drags the pedal; the controls sit above it (z-index 40) so they still work. */
 .mod-pedal.mod-cv-curve{{{cns}}} .drag-handle {
     position: absolute;
